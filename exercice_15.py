@@ -1,14 +1,14 @@
-def fizzbuzz(nombre):
-    if nombre%15 == 0:
-        result = "fizzbuzz"
-        return result
-    elif nombre%3 == 0:
-        result = "fizz"
-        return result
-    elif nombre%5 == 0:
-        result =  "buzz"
-        return result
-    else:
-        return
-Nombre = float(input("Quel est ton chiffre : "))
-print(fizzbuzz(Nombre))
+class Fizzbuzz:
+    def __init__(self):
+        self.nombre = float(input("Quel est ton chiffre : "))
+        self.fizzbuzz(15, self.nombre, "fizzbuzz")
+        self.fizzbuzz(3, self.nombre, "fizz")
+        self.fizzbuzz(5, self.nombre, "buzz")
+        
+    def fizzbuzz(self, multiple, nombre, affiche):
+        if nombre%multiple == 0:
+            print(affiche)
+            exit()
+        else:
+            return
+Fizzbuzz()
