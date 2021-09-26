@@ -3,24 +3,19 @@
 # 5
 
 # Exercice 14
-def Mention(note):
-    if note <= 10:
-        mention = "None"
-        return mention
-    elif note > 10 and note <= 12:
-        mention = "P"
-        return mention
-    elif note > 12 and note <= 15:
-        mention = "AB"
-        return mention
-    elif note > 15 and note <= 18:
-        mention = "B"
-        return mention
-    elif note < 18 and note <= 20:
-        mention = "TB"
-        return mention
-    else:
-        mention = "Cette note n'est pas correcte"
-        return mention
-Note = float(input("Quelle est ta note : "))
-print("Ta mention est :", Mention(Note))
+class mention:
+    def __init__(self):
+        self.note = float(input("Quelle est ta note : "))
+        self.Note(self.note, 0, 10, "None")
+        self.Note(self.note, 10, 12, "P")
+        self.Note(self.note, 12, 15, "AB")
+        self.Note(self.note, 15, 17, "B")
+        self.Note(self.note, 17, 20, "TB")
+
+    def Note(self, note, note_min, note_max, mention):
+        if float(note) > int(note_min) and note <= int(note_max):
+            print("Ta mention est :", mention)
+            exit()
+        else:
+            return
+mention()
